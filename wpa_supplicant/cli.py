@@ -7,6 +7,7 @@
 # TODO: There is no good way to accept array type arguments
 
 import click
+import signal
 from contextlib import contextmanager
 import threading
 from twisted.internet.selectreactor import SelectReactor
@@ -35,7 +36,7 @@ def supplicant():
     else:
         print('OK')
     reactor.disconnectAll()
-    reactor.sigTerm()
+    reactor.sigTerm(signal.SIGTERM, None)
     t.join()
 
 

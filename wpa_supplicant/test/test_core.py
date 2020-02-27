@@ -6,6 +6,7 @@
 import time
 import unittest
 import threading
+import signal
 
 import six
 from six.moves.queue import Queue
@@ -66,7 +67,7 @@ class TestWpaSupplicant(unittest.TestCase):
 
     def tearDown(self):
         self._reactor.disconnectAll()
-        self._reactor.sigTerm()
+        self._reactor.sigTerm(signal.SIGTERM, None)
         self._reactor_thread.join()
         self._taskrunner.stop()
 

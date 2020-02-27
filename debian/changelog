@@ -1,0 +1,7 @@
+python3-wpa-supplicant (0.4.1) UNRELEASED; urgency=medium
+
+  [ Guillaume Revaillot ]
+  * make work with recent click
+  * fix twisted sigterm usage
+
+ -- Guillaume Revaillot <g.revaillot@ppp0.dev>  Thu, 27 Feb 2020 16:01:32 +0100

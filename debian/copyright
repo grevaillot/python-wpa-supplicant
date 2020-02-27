@@ -1,0 +1,7 @@
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: python-wpa-supplicant
+Upstream-Contact: Guillaume Revaillot, <g.revaillot@ppp0.dev>
+
+Files: *
+Copyright: Digi International Inc., 2015.
+License: (MPL-2.0)

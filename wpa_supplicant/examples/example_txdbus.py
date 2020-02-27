@@ -33,13 +33,13 @@ def set_mode_example():
     cli = yield client.connect(reactor, busAddress='system')
 
     root_obj = yield cli.getRemoteObject(dbus_name, root_iface_obj_path)
-    print "Root Object: %s" % root_obj
+    print("Root Object: %s" % root_obj)
 
     wlan0_obj_path = yield root_obj.callRemote('GetInterface', 'wlan1')
-    print "WLAN0 Object Path: %s" % wlan0_obj_path
+    print("WLAN0 Object Path: %s" % wlan0_obj_path)
 
     wlan0_obj = yield cli.getRemoteObject(dbus_name, wlan0_obj_path, interface_iface)
-    print "WLAN0 Object: %s" % wlan0_obj
+    print("WLAN0 Object: %s" % wlan0_obj)
 
     # wpa_supplicant will validate keys, but does not validate values.
     # There are a bunch of additional configuration options for 801.11ac.
@@ -109,7 +109,7 @@ def set_mode_example():
     }
 
     network_obj = yield wlan0_obj.callRemote('AddNetwork', network_settings)
-    print "Network Object Path: %s" % network_obj
+    print("Network Object Path: %s" % network_obj)
     yield wlan0_obj.callRemote('SelectNetwork', network_obj)
     time.sleep(20)
     yield wlan0_obj.callRemote('RemoveNetwork', network_obj)

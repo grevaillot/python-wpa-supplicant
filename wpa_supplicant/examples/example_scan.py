@@ -27,4 +27,4 @@ interface = supplicant.create_interface('wlan0')
 # Issue the scan
 scan_results = interface.scan(block=True)
 for bss in scan_results:
-    print bss.get_ssid()
+    print(bss.get_ssid())
